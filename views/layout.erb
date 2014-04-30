@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Carpet Capers</title>
+    <meta name="language" value="Ruby">
+    <meta name="environment" value="<%= ENV["RACK_ENV"] %>">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="lolphp.ico" /><!-- lol -->
+  </head>
+  <body>
+    <div class="content">
+      <center><h1>Carpet Capers</h1></center>
+      <%= yield %>
+    </div><!-- /.content -->
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

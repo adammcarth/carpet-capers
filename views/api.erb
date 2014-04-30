@@ -1,0 +1,8 @@
+{<% @rooms.each do |room| %>
+  "<%= room.number %>": {
+    "area": <%= room.area %>,
+    "broadloom": <%= room.broadloom %>,
+    "carpet_type": "<%= room.carpet_type %>",
+    "cost": <%= room.cost %>
+  }<% unless room == @rooms.last %>,<% end %>
+<% end %>}

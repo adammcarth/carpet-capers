@@ -1,0 +1,28 @@
+<form action="/calculate" method="get" id="calculation_form">
+  <div id="1">
+    <div class="left">
+      <h2>Room 1</h2>
+      <input type="number" step="any" class="integer" name="measurements[1][width]" placeholder="Width" required="true">
+      <input type="number" step="any" class="integer" name="measurements[1][height]" placeholder="Height" required="true">
+      <input type="submit" class="btn" value="Calculate Area">
+    </div><!-- /.left -->
+    <div class="right">
+      <h2 class="add" id="addRoom">+ add room</h2>
+      <div class="areas">
+        <div class="area meters">0m&sup2;</div>
+        <div class="area broadloom">0b&sup2;</div>
+      </div><!-- /.areas -->
+      <div class="select_quality">
+        <b>Carpet Quality:</b> <select name="measurements[1][carpet_type]">
+          <option value="standard">Standard</option>
+          <option value="premium">Premium</option>
+          <option value="executive">Executive</option>
+        </select>
+      </div><!-- /.select_quality -->
+    </div><!-- /.right -->
+    <div class="clear"></div>
+  </div><!-- /room 1 -->
+  <div class="finish">
+    <input type="submit" class="btn_finish" value="Generate Quote">
+  </div><!-- /.finish -->
+</form>
