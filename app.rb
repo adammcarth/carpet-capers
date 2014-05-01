@@ -8,8 +8,8 @@ JTask.configure do |config|
 end
 
 helpers do
-  def calculate_room_measurements(number, width, height, carpet_type)
-    area = Float(width) * Float(height)
+  def calculate_room_measurements(number, width, length, carpet_type)
+    area = Float(width) * Float(length)
     broadloom = area / 3.66
 
     # If area has more than 2 decimals
@@ -54,9 +54,9 @@ get "/calculate" do
   @rooms = Array.new
   params[:measurements].each do |room_number, measurements|
     width = measurements[:width]
-    height = measurements[:height]
+    length = measurements[:length]
     carpet_type = measurements[:carpet_type]
-    @rooms << calculate_room_measurements(room_number, width, height, carpet_type)
+    @rooms << calculate_room_measurements(room_number, width, length, carpet_type)
   end
 
   # Work out if we need to apply a discount to one of the rooms (room count 3 or more)

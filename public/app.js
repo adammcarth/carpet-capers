@@ -39,7 +39,7 @@ $("#addRoom").on('click', function() {
           '<h2>Room ' + next_room_number + ' <span id="removeRoom">&times;</span></h2>' +
           '<input type="hidden" class="roomNum" value="' + next_room_number + '">' +
           '<input type="number" step="any" class="integer" name="measurements[' + next_room_number + '][width]" placeholder="Width" required="true">' +
-          '<input type="number" step="any" class="integer" name="measurements[' + next_room_number + '][height]" placeholder="Height" required="true">' +
+          '<input type="number" step="any" class="integer" name="measurements[' + next_room_number + '][length]" placeholder="Length" required="true">' +
           '<input type="submit" class="btn" value="Calculate Area">' +
         '</div><!-- /.left -->' +
         '<div class="right">' +
