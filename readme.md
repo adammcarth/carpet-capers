@@ -18,3 +18,5 @@ You can find the case study in [instructions.md](https://github.com/adammcarthur
 - Finally, start the web server by typing in `rackup`.
 
 If you have followed these steps correctly, you should be able to view this application in your web browser (ie Google Chrome, Mozilla) at the address `http://localhost:9292`.
+
+![codeship](https://www.codeship.io/projects/0c3cebd0-b36a-0131-4213-227d03ec1668/status "Codeship Status")
