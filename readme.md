@@ -1,5 +1,7 @@
 This is practise assessment for my Software Development class in highschool. This application has very little practical use and being here probably won't interest you.
 
+![carpet capers adam mcarthur](http://imgkk.com/i/5kx9.png "Carpet Capers")
+
 ### App Info
 
 This application is written in [Ruby](https://www.ruby-lang.org), using a lightweight DSL called [Sinatra](http://www.sinatrarb.com) to add web application functionality. It's only other dependancies are [jtask](https://github.com/adammcarthur/jtask), a JSON text file database I created myself a few months back, and [Erubis](http://www.kuwata-lab.com/erubis) - a templating language to render the "GUI"/view files.
