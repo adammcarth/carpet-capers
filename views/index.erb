@@ -1,28 +1,48 @@
 <form action="/calculate" method="get" id="calculation_form">
-  <div id="1">
-    <div class="left">
-      <h2>Room 1</h2>
-      <input type="number" step="any" class="integer" name="measurements[1][width]" placeholder="Width" required="true">
-      <input type="number" step="any" class="integer" name="measurements[1][height]" placeholder="Height" required="true">
-      <input type="submit" class="btn" value="Calculate Area">
-    </div><!-- /.left -->
-    <div class="right">
-      <h2 class="add" id="addRoom">+ add room</h2>
-      <div class="areas">
-        <div class="area meters">0m&sup2;</div>
-        <div class="area broadloom">0b&sup2;</div>
-      </div><!-- /.areas -->
-      <div class="select_quality">
-        <b>Carpet Quality:</b> <select name="measurements[1][carpet_type]">
-          <option value="standard">Standard</option>
-          <option value="premium">Premium</option>
-          <option value="executive">Executive</option>
-        </select>
-      </div><!-- /.select_quality -->
-    </div><!-- /.right -->
-    <div class="clear"></div>
-  </div><!-- /room 1 -->
-  <div class="finish">
-    <input type="submit" class="btn_finish" value="Generate Quote">
-  </div><!-- /.finish -->
+  <div id="rooms">
+    <div id="1" class="room">
+      <div class="left">
+        <h2>Room 1</h2>
+        <input type="hidden" class="roomNum" value="1">
+        <input type="number" step="any" class="integer" name="measurements[1][width]" placeholder="Width" required="true">
+        <input type="number" step="any" class="integer" name="measurements[1][height]" placeholder="Height" required="true">
+        <input type="submit" class="btn" value="Calculate Area">
+      </div><!-- /.left -->
+      <div class="right">
+        <h2 class="add" id="addRoom">+ add room</h2>
+        <div class="areas">
+          <div class="area meters">0m&sup2;</div>
+          <div class="area broadloom">0b&sup2;</div>
+        </div><!-- /.areas -->
+        <div class="select_quality">
+          <b>Carpet Quality:</b> <select name="measurements[1][carpet_type]">
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+            <option value="executive">Executive</option>
+          </select>
+        </div><!-- /.select_quality -->
+      </div><!-- /.right -->
+      <div class="clear"></div>
+    </div><!-- /room 1 -->
+  </div><!-- /#rooms -->
 </form>
+<div class="quote">
+  <table style="width:100%;">
+    <thead>
+      <tr>
+        <th>Room</th>
+        <th>Carpet Type</th>
+        <th>Price</th>
+        <th>Discount?</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <h3 id="subtotal">Subtotal: $<span></span></h3>
+  <h3 id="gst">GST: $<span></span></h3>
+  <h3 style="font-size:28px; margin-top:20px; margin-bottom:10px; border:1px solid #333; padding:5px;" id="grandtotal">Grand Total: <span style="background:#FF0;"></span></h3>
+</div><!-- /.quote -->
+<div class="finish">
+  <button class="btn_restart">Back</button>
+  <button class="btn_finish">Generate Quote</button>
+</div><!-- /.finish -->
