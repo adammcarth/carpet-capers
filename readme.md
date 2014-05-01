@@ -8,6 +8,8 @@ This application is written in [Ruby](https://www.ruby-lang.org) & JavaScript, u
 
 You can find the case study in [instructions.md](https://github.com/adammcarthur/carpet-capers/blob/master/instructions.md).
 
+View the application on the web: http://carpet-capers.herokuapp.com/
+
 ### To Run This Application On Your Computer:
 
 - **Windows Users Only:** Install the ruby language on your computer [from this website](http://rubyinstaller.org/downloads). Ensure the installer appends ruby to your environment variables in the latter stages of the installation.
