@@ -3,6 +3,7 @@
     "area": <%= room.area %>,
     "broadloom": <%= room.broadloom %>,
     "carpet_type": "<%= room.carpet_type %>",
-    "cost": <%= room.cost %>
+    "cost": <%= room.cost %><% if room.discount %>,
+    "discount": <%= room.discount %><% end %>
   }<% unless room == @rooms.last %>,<% end %>
 <% end %>}
