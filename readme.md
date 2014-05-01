@@ -4,7 +4,7 @@ This is practise assessment for my Software Development class in highschool. Thi
 
 ### App Info
 
-This application is written in [Ruby](https://www.ruby-lang.org), using a lightweight DSL called [Sinatra](http://www.sinatrarb.com) to add web application functionality. It's only other dependancies are [jtask](https://github.com/adammcarthur/jtask), a JSON text file database I created myself a few months back, and [Erubis](http://www.kuwata-lab.com/erubis) - a templating language to render the "GUI"/view files.
+This application is written in [Ruby](https://www.ruby-lang.org) & JavaScript, using a lightweight DSL called [Sinatra](http://www.sinatrarb.com) to add web application functionality. It's only other dependancies are [jtask](https://github.com/adammcarthur/jtask), a JSON text file database I created myself a few months back, and [Erubis](http://www.kuwata-lab.com/erubis) - a templating language to render the "GUI"/view files.
 
 You can find the case study in [instructions.md](https://github.com/adammcarthur/carpet-capers/blob/master/instructions.md).
 
