@@ -3,9 +3,9 @@ require "ostruct"
 Bundler.require(:default)
 
 # Set some JTasky goodness
-JTask.configure do |config|
-  config.file_dir = "storage"
-end
+#JTask.configure do |config|
+  #config.file_dir = "storage"
+#end
 
 helpers do
   def calculate_room_measurements(number, width, length, carpet_type)
@@ -69,14 +69,22 @@ get "/calculate" do
     # Sets a variable containing the lowest number (cost) in the array
     lowest_cost = costs.min
     if @rooms.count == 3
+      done = false
       @rooms.each do |room|
         # 3 rooms, apply a 50% discount to the cheapest room
-        room[:discount] = 50 if room.cost == lowest_cost
+        unless done == true
+          room[:discount] = 50 if room.cost == lowest_cost
+          done = true if room.cost == lowest_cost
+        end
       end
     else
+      done = false
       @rooms.each do |room|
         # 4+ rooms, apply a 100% discount to the cheapest room
-        room[:discount] = 100 if room.cost == lowest_cost
+        unless done == true
+          room[:discount] = 100 if room.cost == lowest_cost
+          done = true if room.cost == lowest_cost
+        end
       end
     end
   end
