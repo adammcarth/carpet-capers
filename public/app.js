@@ -64,7 +64,7 @@ $("#addRoom").on('click', function() {
 });
 
 // Remove a specific room (first room can't be removed)
-$("#removeRoom").on('click', function() {
+$(document).on( "click", "#removeRoom", function() {
   $("#removeRoom").closest(".room").remove();
 });
 
