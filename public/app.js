@@ -73,8 +73,10 @@ $(".btn_finish").click(function() {
   // If integer fields validate
   if(calculationForm[0].checkValidity() === true) {
     // Disable the button, what's the point of re-calculating the quote with the same values?
-    $(this).addClass("disabled");
-    $(this).attr("disabled", true);
+    //$(this).addClass("disabled");
+    //$(this).attr("disabled", true);
+    $(this).hide();
+    $(".btn_email").show();
 
     // Submit the calculation form again to get the prices
     $.ajax({
@@ -152,8 +154,8 @@ $(".btn_restart").click(function() {
   // Re-hide the back button
   $(this).hide();
   // Re-activate the GENERATE QUOTE button
-  $(".btn_finish").removeClass("disabled");
-  $(".btn_finish").attr("disabled", false);
+  $(".btn_email").hide();
+  $(".btn_finish").show();
 
   // Reset the quote table (delete its contents) so we don't duplicate it's contents
   // next time an quote is generated.
@@ -162,4 +164,10 @@ $(".btn_restart").click(function() {
   // Slide the quote page up and re-show the calculation form (first page).
   $(".quote").slideUp(500);
   $("#calculation_form").delay(700).slideDown(500);
+});
+
+// When email button is clicked hombres
+$(".btn_email").click(function() {
+  var email = window.prompt("Please enter an email address to send this quote to...");
+  window.location.replace("/send-quote?email=" + email + "&quote=ohhaider");
 });
