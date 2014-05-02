@@ -93,3 +93,8 @@ get "/calculate" do
   content_type :json
   erb :api, :layout => false
 end
+
+get "/send-quote" do
+  Pony.mail(:to => params[:email], :from => "noreply@carpet-capers.lol", :subject => "Carpet Capers Quote", :body => params[:quote])
+  redirect "/"
+end
