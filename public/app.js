@@ -65,7 +65,7 @@ $("#addRoom").on('click', function() {
 
 // Remove a specific room (first room can't be removed)
 $(document).on( "click", "#removeRoom", function() {
-  $("#removeRoom").closest(".room").remove();
+  $(this).closest(".room").remove();
 });
 
 // GENERATE QUOTE button is pressed
