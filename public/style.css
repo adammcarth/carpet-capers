@@ -265,3 +265,22 @@ table tr:hover td {
   background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
   background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);
 }
+
+.msg {
+  padding:15px;
+  border:1px solid transparent;
+  margin-bottom:25px;
+  border-radius:4px;
+}
+
+.msg.success {
+  background-color:#dff0d8;
+  border-color:#d6e9c6;
+  color:#3c763d;
+}
+
+.msg.error {
+  background-color:#f2dede;
+  border-color:#ebccd1;
+  color:#a94442;
+}
