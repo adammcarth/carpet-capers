@@ -80,17 +80,17 @@ $(".btn_finish").click(function() {
 
     // Submit the calculation form again to get the prices
     $.ajax({
-    dataType: "json",
-    type: calculationForm.attr("method"),
-    url: calculationForm.attr("action"),
-    data: calculationForm.serialize(),
-    success: showQuote,
-    complete: function() {
-      $("#calculation_form").slideUp(500);
-      // Show the back button
-      $(".btn_restart").show();
-    }
-  });
+      dataType: "json",
+      type: calculationForm.attr("method"),
+      url: calculationForm.attr("action"),
+      data: calculationForm.serialize(),
+      success: showQuote,
+      complete: function() {
+        $("#calculation_form").slideUp(500);
+        // Show the back button
+        $(".btn_restart").show();
+      }
+    });
   } else {
     // Integer fields didn't validate
     alert("One or more of your measurements are missing or incorrect. Clicking on 'Calculate Area' will help you find your error.");
@@ -168,6 +168,21 @@ $(".btn_restart").click(function() {
 
 // When email button is clicked hombres
 $(".btn_email").click(function() {
+  $(".msg").remove();
   var email = window.prompt("Please enter an email address to send this quote to...");
-  window.location.replace("/send-quote?email=" + email + "&quote=ohhaider");
+  $(".content").animate(300).css("opacity", "0.4");
+  $.ajax({
+    type: "post",
+    url: "/send-quote",
+    data: { email: email, quote: $(".quote").html(), grand_total: $("#grandtotal span").text() },
+    success: function() {
+      $(".quote table").before('<div class="msg success">Successfully sent quote to <b>' + email + '</b>.</div>');
+    },
+    error: function() {
+      $(".quote table").before('<div class="msg error"><b>Error:</b> This quote could not be sent to <b>' + email + '</b>.</div>');
+    },
+    complete: function() {
+      $(".content").animate(300).css("opacity", "1");
+    }
+  });
 });
