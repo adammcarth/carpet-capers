@@ -10,8 +10,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     polyglot (0.3.4)
-    pony (1.8)
-      mail (>= 2.0)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -30,5 +28,5 @@ PLATFORMS
 DEPENDENCIES
   erubis
   jtask
-  pony
+  mail
   sinatra

@@ -95,6 +95,16 @@ get "/calculate" do
 end
 
 get "/send-quote" do
-  Pony.mail(:to => params[:email], :from => "noreply@carpet-capers.lol", :subject => "Carpet Capers Quote", :body => params[:quote])
+  email = params[:email]
+  mail = Mail.new do
+    to email
+    from "noreply@carpet-capers.lol"
+    subject "Carpet Capers Quote"
+    body "Test"
+  end
+
+  mail.delivery_method :sendmail
+  mail.deliver
+
   redirect "/"
 end
