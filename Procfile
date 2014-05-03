@@ -1,2 +1,1 @@
-bundle install
-rackup -p 80
+web: bundle exec rackup config.ru -p $PORT -E development
